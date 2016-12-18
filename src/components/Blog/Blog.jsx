@@ -1,6 +1,6 @@
 import ArticleItem from './ArticleItem';
 import ArticleActionList from './ArticleActionList';
-import articleStore from '../store/ArticleStore';
+import articleStore from '../store/articleStore';
 
 import './Blog.css';
 
@@ -10,6 +10,7 @@ class Blog extends React.Component {
 		this.state = {
 			articles: this.createBlog()
 		}
+		this.callback = this.callback.bind(this);
 	}
 	createBlog() {
 		var result = [];
@@ -20,15 +21,16 @@ class Blog extends React.Component {
 		}
 		return result;
 	}
+	callback() {
+		this.setState({
+			articles: this.createBlog()
+		})
+	}
 	componentWillMount() {
-		articleStore.on('article', () => {
-			this.setState({
-				articles: this.createBlog()
-			})
-		});
+		articleStore.on('article', this.callback);
 	}
 	componentWillUnmount() {
-		articleStore.off('article');
+		articleStore.removeListener('article', this.callback);
 	}
 	render() {
 		return (

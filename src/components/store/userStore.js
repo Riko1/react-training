@@ -16,9 +16,9 @@ import { users } from '../../js/db';
 class UserStore extends EventEmmiter {
 	constructor() {
 		super();
-		this.state = {
-			user: null
-		}
+		
+		this.user = null;
+
 		this.getUserId = this.getUserId.bind(this);
 		this.getUser = this.getUser.bind(this);
 		this.userHandler = this.userHandler.bind(this);
@@ -33,42 +33,35 @@ class UserStore extends EventEmmiter {
 		return null;
 	}
 	getUser(id) {
-
-		for (var field in users) {
-			var user = users[field];
-			if (field == id) {
+		for (var _id in users) {
+			var user = users[_id];
+			if (_id == id) {
 				return user;
 			}
 		}
 	}
 	isLogin() {
-		return this.state.user !== null;
+		return this.user !== null;
 	}
 	userHandler(action) {
 		switch(action.type) {
 			case usersConst.LOGIN: {
 				var id = this.getUserId(action.payload);
-
 				if (id === null) {
 					this.emit('login.error');
 				} else {
-					this.setState({
-						user: this.getUser(id)
-					});
-					//this.emit('login');
-					console.log(this)
+					this.user = this.getUser(id);
+					this.emit('login');
 				}
 			} break;
 			case usersConst.LOGOUT: {
-				this.setState({
-					user: null
-				});
+				this.user = null;
 				this.emit('logout');
 			} break;
 		}
 	}
 }
-alert('userStore')
+
 var userStore = new UserStore();
 
 dispatcher.register(userStore.userHandler);

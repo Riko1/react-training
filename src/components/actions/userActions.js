@@ -1,6 +1,6 @@
 import dispatcher from '../dispatcher';
 import userConst from '../consts/users'
-import userStore from '../store/UserStore';
+import userStore from '../store/userStore';
 
 class UserAction {
 	login(login) {
@@ -16,5 +16,5 @@ class UserAction {
 		})
 	}
 }
-alert('userAction')
+
 export default new UserAction;

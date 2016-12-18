@@ -1,5 +1,5 @@
 import { Link } from 'react-router';
-import articleStore from '../store/ArticleStore'
+import articleStore from '../store/articleStore'
 
 class Article extends React.Component {
 	constructor(props) {

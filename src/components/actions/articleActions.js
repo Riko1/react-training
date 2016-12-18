@@ -1,6 +1,5 @@
 import dispatcher from '../dispatcher';
 import articleConst from '../consts/articles'
-import articleStore from '../store/ArticleStore';
 
 class ArticleAction {
 	add(article) {

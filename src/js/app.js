@@ -1,6 +1,4 @@
 import 'babel-polyfill';
-import React from 'react';
-import ReactDOM from 'react-dom';
 import { Router, Route, IndexRoute, browserHistory, IndexRedirect, Redirect } from 'react-router';
 import Default from '../components/Page/Default';
 import Home from '../components/Home/Home';
