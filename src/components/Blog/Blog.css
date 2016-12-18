@@ -1,0 +1,14 @@
+.articles-action-list {
+	margin: 15px 0;
+}
+.articles-action-list button {
+	margin-right: 8px;
+
+}
+.articles-action-list button:focus,
+.articles-action-list button:focus:active {
+	outline: none;
+}
+.articles-action-list textarea {
+	max-width: 100%;
+}

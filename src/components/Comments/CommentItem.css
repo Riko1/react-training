@@ -1,0 +1,33 @@
+.comment-item {
+	width: 50%;
+	margin: 15px 0 15px 130px;
+	border: 2px solid black;
+	padding: 10px 10px 10px 90px;
+	box-sizing: border-box;
+	background-color: azure;
+	text-align: left;
+	position: relative;
+}
+.comment-item__avatar {
+	height: 60px;
+	width: 60px;
+	background: green;
+	position: absolute;
+	left: 10px;
+	top: 10px;
+	border-radius: 50%;
+}
+.comment-item__name {
+	text-transform: capitalize;
+	font-size: 25px;
+	vertical-align: middle;
+}
+.comment-item__email {
+	margin: 5px 0 0 0;
+	color: #aaa;
+	font-size: 18px;
+}
+.comment-item__body {
+	clear: both;
+	margin-top: 10px;
+}

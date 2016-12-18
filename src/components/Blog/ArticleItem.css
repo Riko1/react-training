@@ -1,0 +1,13 @@
+.article-item {
+	border: 1px solid grey;
+	margin: 15px 0;
+	padding: 10px;
+}
+.article-item h3 {
+	font-weight: bold;
+	margin: 0 0 10px;
+}
+.article-item strong {
+	color: dimgrey;
+	text-transform: uppercase;
+}
